@@ -1,0 +1,67 @@
+target-version = "py311"
+line-length = 88
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
+    "ARG", # flake8-unused-arguments
+    "SIM", # flake8-simplify
+    "TCH", # flake8-type-checking
+    "TID", # flake8-tidy-imports
+    "Q", # flake8-quotes
+    "S", # flake8-bandit
+    "BLE", # flake8-blind-except
+    "FBT", # flake8-boolean-trap
+    "A", # flake8-builtins
+    "COM", # flake8-commas
+    "DTZ", # flake8-datetimez
+    "EM", # flake8-errmsg
+    "EXE", # flake8-executable
+    "FA", # flake8-future-annotations
+    "ISC", # flake8-implicit-str-concat
+    "ICN", # flake8-import-conventions
+    "G", # flake8-logging-format
+    "INP", # flake8-no-pep420
+    "PIE", # flake8-pie
+    "T20", # flake8-print
+    "PYI", # flake8-pyi
+    "PT", # flake8-pytest-style
+    "Q", # flake8-quotes
+    "RSE", # flake8-raise
+    "RET", # flake8-return
+    "SLF", # flake8-self
+    "SLOT", # flake8-slots
+    "TCH", # flake8-type-checking
+    "INT", # flake8-gettext
+    "DJ", # flake8-django
+    "RUF", # Ruff-specific rules
+]
+ignore = [
+    "E501", # line too long, handled by black
+    "B008", # do not perform function calls in argument defaults
+    "S101", # use of assert detected
+    "PLR0913", # too many arguments to function call
+    "PLR0912", # too many branches
+    "PLR0915", # too many statements
+    "COM812", # missing trailing comma
+    "ISC001", # implicitly concatenated string literals
+    "Q000", # single quotes found but double quotes preferred
+    "Q001", # single quote multiline found but double quotes preferred
+    "Q002", # single quote docstring found but double quotes preferred
+    "Q003", # change outer quotes to avoid escaping inner quotes
+]
+
+[per-file-ignores]
+"__init__.py" = ["F401"]
+"migrations/*" = ["ALL"]
+
+[isort]
+known-first-party = ["farjad"]
+force-sort-within-sections = true
+
+[flake8-type-checking]
+runtime-evaluated-base-classes = ["pydantic.BaseModel"]
